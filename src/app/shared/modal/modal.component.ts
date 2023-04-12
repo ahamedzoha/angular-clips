@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
+  // providers: [ModalService],
 })
 export class ModalComponent {
-  isVisible: boolean = false;
-
-  constructor() {
-    this.isVisible = true;
-  }
-
-  toggleModal() {
-    this.isVisible = !this.isVisible;
+  //  visible: boolean = false;
+  constructor(public modal: ModalService) {}
+  closeModal($event: Event) {
+    $event.preventDefault();
+    this.modal.toggleModal();
   }
 }
