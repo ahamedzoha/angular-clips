@@ -6,11 +6,9 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(public modal: ModalService) {
-    console.log(modal.isModalVisible());
-  }
+  constructor(public modal: ModalService) {}
   openModal($event: Event) {
     $event.preventDefault();
-    this.modal.toggleModal();
+    this.modal.toggleModal('authentication');
   }
 }

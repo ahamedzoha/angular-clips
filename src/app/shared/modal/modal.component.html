@@ -3,7 +3,7 @@
   class="fixed z-50 inset-0 overflow-y-auto hidden"
   id="modal"
   [ngClass]="{
-    hidden: !modal.isModalVisible()
+    hidden: !modal.isModalVisible(modalID)
   }"
 >
   <div
@@ -30,7 +30,7 @@
           <!-- Modal Close Button -->
           <div
             class="modal-close cursor-pointer z-50"
-            (click)="modal.toggleModal()"
+            (click)="modal.toggleModal(modalID)"
           >
             &#x2715;
           </div>
